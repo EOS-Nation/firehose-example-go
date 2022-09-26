@@ -59,7 +59,7 @@ func main() {
 		dialOptions = []grpc.DialOption{grpc.WithTransportCredentials(credentials.NewTLS(&tls.Config{InsecureSkipVerify: true}))}
 	}
 
-	dfuse, err := dfuse.NewClient(endpoint, apiKey)
+	dfuse, err := dfuse.NewClient(endpoint, apiKey, dfuse.WithAuthURL("https://auth.eosnation.io"))
 	noError(err, "unable to create dfuse client")
 
 	conn, err := dgrpc.NewExternalClient(endpoint, dialOptions...)
@@ -86,6 +86,7 @@ func main() {
 	lastBlockRef := bstream.BlockRefEmpty
 
 	zlog.Info("Starting firehose test", zap.String("endpoint", endpoint), zap.Stringer("range", blockRange))
+
 stream:
 	for {
 		tokenInfo, err := dfuse.GetAPITokenInfo(context.Background())
