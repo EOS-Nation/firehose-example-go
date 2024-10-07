@@ -2,6 +2,10 @@
 [![reference](https://img.shields.io/badge/godoc-reference-5272B4.svg?style=flat-square)](https://pkg.go.dev/github.com/streamingfast/playground-firehose-eosio-go)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
+> [!Note]
+> dfuse has been deprecated and all services by EOS Nation have been shut down. We offer a Firehose v2 for Antelope chains which can be found on [https://pinax.network](https://pinax.network).
+> The equivalent examples can be found in [this](https://github.com/pinax-network/firehose-examples-go) repository.
+
 Benefits:
 * single integration for accessing history and real-time, low-latency stream of live block data
 * simplify your code that handle the irregularities of blockchains (our customers said 90% less code is needed when using this system)
